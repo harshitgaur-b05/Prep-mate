@@ -4,6 +4,7 @@ import CategoryFilter from '../../_components/CategoryFilter'
 import { getCourseList } from '@/app/_services'
 
 
+
   function Browse() {
     useEffect(()=>{
         getCouses()

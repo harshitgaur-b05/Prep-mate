@@ -2,6 +2,7 @@ import React from 'react'
 import SideBarNav from '../_components/SideBarNav'
 import Header from '../_components/Header'
 
+
 function Homelayout({children}) {
   return (
     <div>

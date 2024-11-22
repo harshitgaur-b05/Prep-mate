@@ -1,5 +1,7 @@
+
 import { gql } from 'graphql-tag';
 import { request } from 'graphql-request';
+
 
 const MASTER_URL = `https://ap-south-1.cdn.hygraph.com/content/${process.env.NEXT_PUBLIC_HYGRAPH_KEY}/master`;
 
