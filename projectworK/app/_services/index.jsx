@@ -8,7 +8,7 @@ const MASTER_URL = `https://ap-south-1.cdn.hygraph.com/content/${process.env.NEX
 export const getCourseList = async () => {
   const query = gql`
     query courseList {
-      courseLists {
+      courseLists (first: 20, orderBy: publishedAt_ASC){
         banner {
           url
         }
