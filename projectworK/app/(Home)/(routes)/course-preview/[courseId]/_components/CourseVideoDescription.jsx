@@ -10,7 +10,7 @@ function CourseVideoDescription({ courseInfo }) {
   return (
     <div>
       <h2 className="text-[20px] font-semibold " >{courseInfo.name || "No Course Name Available"}</h2>
-      <p>{courseInfo.description || "No Description Available"}</p>
+      
       {/* video player */}
       {console.log(courseInfo?.chapter[0]?.video?.url)}
       {
@@ -18,6 +18,7 @@ function CourseVideoDescription({ courseInfo }) {
       }
       <VideoPlayer videoUrl={courseInfo?.chapter[0]?.video?.url}/>
       {/* description */}
+      <h2 className="mt-5 text-[17px] font-semibold">About this course</h2>
       <div>
         <Markdown className='text-[12px]
         font-light mt-2 leading-6'>{courseInfo.description}</Markdown>
