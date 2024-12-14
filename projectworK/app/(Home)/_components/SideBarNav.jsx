@@ -38,7 +38,7 @@ function SideBarNav() {
         <div className="h-full bg-white border-r flex flex-col overflow-y-auto shadow-md">
             <div className="p-5 border-b">
                 <Image 
-                    src="/logo.webp" 
+                    src="/logo.png" 
                     alt="Logo" 
                     width={100} 
                     height={100} 
