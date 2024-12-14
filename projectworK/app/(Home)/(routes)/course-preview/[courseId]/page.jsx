@@ -5,6 +5,8 @@ import React, { useEffect, useState } from "react";
 import CourseVideoDescription from "./_components/CourseVideoDescription";
 import { getCourseById } from "@/app/_services";
 import Card from "../../../_components/Card"; // Adjust the path if the file is elsewhere
+import CourseEnrollSection from "./_components/CourseEnrollSection";
+import CourseContentSection from "./_components/CourseContentSection";
 
 function CoursePreview() {
   const pathname = usePathname(); // Get the current URL path
@@ -17,7 +19,7 @@ function CoursePreview() {
     const slug = segments[segments.length - 1]; // Get the last segment
     setSlug(slug);
 
-    console.log("Extracted Slug:", slug); // Verify the slug
+    
   }, [pathname]);
 
   useEffect(() => {
@@ -29,7 +31,7 @@ function CoursePreview() {
   const getCourseInfoBySlug = async (slug) => {
     try {
       const response = await getCourseById(slug); // Call your service to fetch data
-      console.log("Fetched Course Info:", response); // Log the fetched data
+      // console.log("Fetched Course Info:", response); // Log the fetched data
       setInfo(response); // Store the response in state
     } catch (error) {
       console.error("Error fetching course info:", error);
@@ -60,15 +62,12 @@ function CoursePreview() {
           </div>
         </Card>
       </div>
-      {/* <div className="bg-gray-100 rounded-xl shadow-sm p-4 border border-gray-200"> */}
-        {/* Optional: Add additional content or sidebar */}
-        {/* <h3 className="text-lg font-semibold text-gray-700 mb-3">
-          Course Details
-        </h3> */}
-        {/* <p className="text-gray-500 text-sm">
-          Additional information or related content can be placed here.
-        </p> */}
-      {/* </div> */}
+      {/* course content */}
+     <div>
+      {console.log(courseInfo)}
+            <CourseEnrollSection/>
+            <CourseContentSection courseInfo={courseInfo}/>
+     </div>
     </div>
   );
 }
