@@ -1,4 +1,4 @@
-"use client"
+
 import React, { useEffect, useState } from 'react';
 import { getCourseList } from '@/app/_services'; // Adjust the path based on your project structure
 import CourseItem from './CourseItem';
@@ -15,7 +15,7 @@ function CourseList() {
     setError(null); // Reset error
     try {
       const resp = await getCourseList();
-      console.log(resp); // Debugging response
+      
       setCourseList(resp || []); // Fallback to an empty array
     } catch (err) {
       console.error("Error fetching courses:", err);
