@@ -10,7 +10,7 @@ function SideBarNav() {
             id: 1,
             name: "Browse",
             icon: Search,
-            path: "/Browse",
+            path: "/browse",
         },
         {
             id: 2,
