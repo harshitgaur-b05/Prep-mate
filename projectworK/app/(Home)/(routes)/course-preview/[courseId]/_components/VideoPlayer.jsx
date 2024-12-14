@@ -6,6 +6,7 @@ function VideoPlayer({videoUrl}) {
     width={1000}
     height={250}
     controls
+    key={videoUrl}
     className='roundes-sm'
     >
         <source src={videoUrl} type='video/mp4' />

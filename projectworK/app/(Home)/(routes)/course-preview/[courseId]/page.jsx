@@ -12,14 +12,13 @@ function CoursePreview() {
   const pathname = usePathname(); // Get the current URL path
   const [slug, setSlug] = useState(""); // State for storing the slug
   const [courseInfo, setInfo] = useState(null); // State for storing course info
+  const [activeIndex, setActiveIndex] = useState(0); // State for storing active index
 
   useEffect(() => {
     // Extract the slug from the URL path
     const segments = pathname.split("/"); // Split the URL into segments
     const slug = segments[segments.length - 1]; // Get the last segment
     setSlug(slug);
-
-    
   }, [pathname]);
 
   useEffect(() => {
@@ -31,7 +30,6 @@ function CoursePreview() {
   const getCourseInfoBySlug = async (slug) => {
     try {
       const response = await getCourseById(slug); // Call your service to fetch data
-      // console.log("Fetched Course Info:", response); // Log the fetched data
       setInfo(response); // Store the response in state
     } catch (error) {
       console.error("Error fetching course info:", error);
@@ -50,6 +48,7 @@ function CoursePreview() {
             {courseInfo ? (
               <CourseVideoDescription 
                 courseInfo={courseInfo} 
+                activeIndex={activeIndex} // Correctly passing activeIndex
                 className="bg-gray-700" 
               />
             ) : (
@@ -63,24 +62,18 @@ function CoursePreview() {
         </Card>
       </div>
       {/* course content */}
-     <div>
-      {console.log(courseInfo)}
-            <CourseEnrollSection/>
-            <CourseContentSection courseInfo={courseInfo}/>
-     </div>
+      <div>
+        <CourseEnrollSection />
+        <CourseContentSection 
+          courseInfo={courseInfo} 
+          setActiveIndex={setActiveIndex} // Pass callback to child
+        />
+      </div>
     </div>
   );
 }
 
 export default CoursePreview;
-
-
-
-
-
-
-
-
 
 
 
