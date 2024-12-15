@@ -20,9 +20,9 @@ function SideBarNav() {
         },
         {
             id: 3,
-            name: "Upgrade",
+            name: "career-assistance",
             icon: Shield,
-            path: "/upgrade",
+            path: "/assistant",
         },
         {
             id: 4,
@@ -38,7 +38,7 @@ function SideBarNav() {
         <div className="h-full bg-white border-r flex flex-col overflow-y-auto shadow-md">
             <div className="p-5 border-b">
                 <Image 
-                    src="/logo.png" 
+                    src="/abcd.jpg" 
                     alt="Logo" 
                     width={100} 
                     height={100} 

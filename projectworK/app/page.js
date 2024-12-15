@@ -7,14 +7,15 @@ import { useEffect } from "react";
 
 export default function Home() {
   const router=useRouter();
-  const {user,isLoaded}=useUser();
+  const {user}=useUser();
   useEffect(()=>{
     if(user){
-      router.push('/dashboard');
+      
+      router.push('/browse');
 
     }
     else{
-     isLoaded&& router.push('/browse')
+      router.push('/dashboard');
     }
   },[user])
   return (
